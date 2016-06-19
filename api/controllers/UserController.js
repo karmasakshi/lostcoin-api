@@ -36,8 +36,6 @@ module.exports = {
 
                         } else {
 
-                            console.log(createdCategories);
-
                             return res.json(foundOrCreatedUser);
 
                         }
