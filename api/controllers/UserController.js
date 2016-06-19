@@ -20,7 +20,29 @@ module.exports = {
 
                 } else {
 
-                    return res.json(foundOrCreatedUser);
+                    var createCategoriesNeedle = [
+                        {name: 'Rent', user: foundOrCreatedUser.id},
+                        {name: 'Food', user: foundOrCreatedUser.id},
+                        {name: 'Conveyance', user: foundOrCreatedUser.id},
+                        {name: 'Clothing', user: foundOrCreatedUser.id},
+                        {name: 'Grocery', user: foundOrCreatedUser.id}
+                    ];
+
+                    Category.create(createCategoriesNeedle).exec(function (err, createdCategories) {
+
+                        if (err) {
+
+                            return res.serverError();
+
+                        } else {
+
+                            console.log(createdCategories);
+
+                            return res.json(foundOrCreatedUser);
+
+                        }
+
+                    });
 
                 }
 

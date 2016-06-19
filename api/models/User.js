@@ -10,7 +10,7 @@ module.exports = {
         },
         categories: {
             collection: 'category',
-            via: 'users'
+            via: 'user'
         },
         transactions: {
             collection: 'transaction',

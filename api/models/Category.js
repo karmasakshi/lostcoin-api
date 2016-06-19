@@ -9,9 +9,9 @@ module.exports = {
             collection: 'transaction',
             via: 'category'
         },
-        users: {
-            collection: 'user',
-            via: 'categories'
+        user: {
+            model: 'user',
+            required: true
         }
     }
 };
